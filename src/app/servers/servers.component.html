@@ -1,6 +1,20 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<label>Server Name</label>
+<input 
+    type="text" 
+    class="form-control"
+    (input)="onUpdateServerName($event)">
+
+<button
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add Server</button>
 <!--[disabled] è attivo fino a quando allowNewServer è true, se metto !allowNewServer fino a quando è false, perché sto dicendo OPPOSITEallowNewServer-->
 <hr>
 
+<!-- <p [innerText]="allowNewServer"></p> -->
+
+<p>{{ serverCreationStatus }}</p>
+
+<p>{{ serverName }}</p>
 <app-server></app-server>
 <app-server></app-server>
